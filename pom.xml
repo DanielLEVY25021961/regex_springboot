@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>levy.daniel.application</groupId>
+	<artifactId>regex_springboot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>regex_springboot</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+    <!-- ================================================ -->
+	<!--                    PROPERTIEs                    -->
+	<!-- Préciser ici les propriétés générales du projet. -->
+	<!-- ================================================ -->
+	<properties>
+	
+	
+		<!-- Force l'encoding des sources du projet en UTF-8 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Vérifie la conformité des classes Java (.java) avec le JDK 1.8 -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<!-- Vérifie la conformité des classes Java (.class) avec le JDK 1.8 -->
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- Encodage pourle Reporting (site web) -->
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		
+
+		<!-- ========================================================== -->
+		<!-- 		VERSIONS DES COMPOSANTS DANS LES DEPENDANCES		-->
+		<!-- ========================================================== -->
+		<!-- 				Version de SPRING 							-->
+		<spring.version>5.0.1.RELEASE</spring.version>
+		<!-- 				Version d'HIBERNATE 						-->
+		<hibernate.version>5.3.1.Final</hibernate.version>
+		<!-- 			Version hibernate-jpa-2.1-api				    -->
+		<hibernate-jpa-2.1-api.version>1.0.2.Final</hibernate-jpa-2.1-api.version>
+		<!-- 			Version validation-api						    -->
+		<validation-api.version>2.0.0.Final</validation-api.version>
+		<!-- 			Version d'HIBERNATE VALIDATOR				    -->
+		<hibernate.validator>6.0.2.Final</hibernate.validator>
+		<!-- 			Version du POOL DE CONNEXION c3p0	 			-->
+		<c3p0.version>0.9.5.2</c3p0.version>
+		<!-- 					Version de JSTL						 	-->
+		<jstl.version>1.2</jstl.version>
+		<!-- 			Version des Taglibs JSTL 						-->
+		<taglibs-standard-impl.version>1.2.5</taglibs-standard-impl.version>
+		<!-- 				Version de Servlet 							-->
+		<servlets.version>3.1.0</servlets.version>
+		<!-- 		Version de javax.servlet.jsp-api				    -->
+		<javax.servlet.jsp-api.version>2.3.2-b02</javax.servlet.jsp-api.version>
+		<!--				Version de JSP							    -->
+		<jsp.version>2.2.1-b03</jsp.version>
+		
+		<!-- 				Version Driver BD Postgresql			    -->
+		<postgresql.version>42.1.4</postgresql.version>
+		<!-- 				Version Driver BD MySQL						-->
+		<mysql-connector-java.version>8.0.11</mysql-connector-java.version>
+		<!-- 				Version de BD HSQLDB						-->
+		<hsqldb.version>2.4.1</hsqldb.version>
+		
+		<!-- 				Version de commons-lang					    -->
+		<commons-lang.version>2.6</commons-lang.version>
+		<!-- 				Version de commons-lang3				    -->
+		<commons-lang3.version>3.6</commons-lang3.version>
+		<!--  				Version de commons-text						-->
+		<commons-text.version>1.2</commons-text.version>
+		<!-- 				Version de commons-logging				    -->
+		<commons-logging.version>1.2</commons-logging.version>
+		<!-- 				Version de log4j						    -->
+		<log4j.version>1.2.17</log4j.version>
+		<!-- 				Version de log4j-core					    -->
+		<log4j-core.version>2.9.1</log4j-core.version>
+		<!-- 				Version de junit						    -->
+		<junit.version>4.12</junit.version>
+		<!-- 				Version de JUnit pour JavaFX 				-->
+		<testfx-junit.version>4.0.13-alpha</testfx-junit.version>
+		<!-- 				Version de joda-time					    -->
+		<joda-time.version>2.9.9</joda-time.version>
+		<!-- 				Version de joda-time-hibernate			    -->
+		<joda-time-hibernate.version>1.4</joda-time-hibernate.version>
+		<!-- 				Version de joda-time-jsptags			    -->
+		<joda-time-jsptags.version>1.1.1</joda-time-jsptags.version>
+		<!-- 			Version de usertype.core (joda-time Hibernate)  -->
+		<usertype.core.version>6.0.1.GA</usertype.core.version>
+		<!-- 		Version de usertype.jodatime (joda-time Hibernate)  -->
+		<usertype.jodatime.version>2.0.1</usertype.jodatime.version>
+		
+		<!--  		Version de maven-antrun-plugin 						-->
+		<maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
+		<!-- 		Version de maven-assembly-plugin				    -->
+		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+		<!-- 		Version de maven-dependency-plugin 					-->
+		<maven-dependency-plugin.version>3.0.2</maven-dependency-plugin.version>
+		<!-- 		Version maven-release-plugin 						-->
+		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+		<!-- 		Version maven-clean-plugin						    -->
+		<maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
+		<!-- 		Version maven-resources-plugin					    -->
+		<maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+		<!-- 		Version maven-war-plugin						    -->
+		<maven-war-plugin.version>3.2.0</maven-war-plugin.version>
+		<!-- 		Version maven-jar-plugin						    -->
+		<maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+		<!-- 		Version maven-compiler-plugin					    -->
+		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+		<!-- 		Version maven-surefire-plugin					    -->
+		<maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+		<!-- 		Version maven-install-plugin						-->
+		<maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+		<!-- 		Version maven-deploy-plugin						    -->
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+		<!-- 		Version maven-site-plugin						    -->
+		<maven-site-plugin.version>3.7</maven-site-plugin.version>
+		<!-- 	Version maven-project-info-reports-plugin			    -->
+		<maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
+		<!-- 		Version maven-javadoc-plugin					    -->
+		<maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+		
+	</properties>
+
+	<dependencies>
+	
+	
+		<!-- ================================ -->
+		<!-- dépendances pour apache.commons -->
+		<!-- ================================ -->
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${commons-logging.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-text</artifactId>
+		    <version>${commons-text.version}</version>
+		</dependency>
+		
+		<!-- ATTENTION, IMPORTER MANUELLEMENT CAR LE SITE https://start.spring.io/ NE LE FOURNIT PAS -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.2.4.Final</version>
+		</dependency>
+
+			
+        <!-- ================================ -->
+        <!--    dépendances pour SPRING       -->
+        <!-- ================================ -->
+        <!-- Dépendance JPA pour les contrôleurs WEB et REST -->
+        <!-- Permet à SPRING de servir les fichiers static comme Tomcat -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Dépendance pour la sécurité Spring Boot -->
+        <!-- ATTENTION INDISPENSABLE POUR LES REQUETES CORS (qui proviennent d'un hôte extérieur à l'hôte SPRING) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- Dépendance pour que Tomcat puisse lancer Spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Dépendance pour les tests unitaires -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+		
+		
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
