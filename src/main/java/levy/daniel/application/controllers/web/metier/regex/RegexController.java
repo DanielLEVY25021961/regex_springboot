@@ -69,7 +69,7 @@ public class RegexController {
 	 * </ul>
 	 *
 	 * @param pRequeteDto
-	 * @return
+	 * @return RegexDto
 	 * @throws Exception : RegexDto :  .<br/>
 	 */
 	/* précise qu'au sein de la route /regex, la route /valider passée 

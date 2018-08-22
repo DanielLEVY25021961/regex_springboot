@@ -26,7 +26,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RegexSpringbootApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RegexSpringbootApplication.class, args);
+	/**
+	 * .<br/>
+	 * <ul>
+	 * <li>.</li>
+	 * </ul>
+	 *
+	 * @param pArgs :  :  .<br/>
+	 */
+	public static void main(
+			final String[] pArgs) {
+		SpringApplication.run(RegexSpringbootApplication.class, pArgs);
 	}
+	
+	
 }
