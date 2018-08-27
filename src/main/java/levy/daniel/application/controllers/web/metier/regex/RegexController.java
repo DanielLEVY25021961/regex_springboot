@@ -19,7 +19,7 @@ import levy.daniel.application.model.services.metier.regex.impl.RegexService;
  * de détecter que le présent CONTROLLER est Rest 
  * (produit automatiquement du JSON).<br/>
  * l'annotation RequestMapping sert à indiquer 
- * la route de base du CONTROLLER.<br/>
+ * la route de <b>base</b> du CONTROLLER.<br/>
  * <br/>
  * On va créer une route POST chargée de l'envoi des données de la VUE (texte, motif) au présent CONTROLLER.<br/>
  * <br/>
@@ -59,9 +59,7 @@ public class RegexController {
 
 	// *************************METHODES************************************/
 
-	
-	
-	
+		
 	/**
 	 * .<br/>
 	 * <ul>
@@ -73,7 +71,8 @@ public class RegexController {
 	 * @throws Exception : RegexDto :  .<br/>
 	 */
 	/* précise qu'au sein de la route /regex, la route /valider passée 
-	 * dans une méthode POST permet d'appeler la méthode. */
+	 * dans une méthode POST permet d'appeler la présente méthode. */
+	/* précise que l'objet RequeteDto est transmis dans le body de la requête. */
 	@RequestMapping(value = "/valider", method = RequestMethod.POST)
 	public RegexDto valider(
 			@RequestBody final RequeteDto pRequeteDto) throws Exception {
